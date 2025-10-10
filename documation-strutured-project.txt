@@ -1,0 +1,113 @@
+
+### Estrutura de Pastas Completa (Cliente + Administrador) com Comentários
+
+```
+/meu-ecommerce-final/
+|
+|-- /public/                  // <-- Raiz do servidor. ÚNICA pasta acessível publicamente.
+|   |-- index.php             // <-- FRONT CONTROLLER. Ponto de entrada para TODAS as requisições.
+|   |-- .htaccess             // Regras do servidor Apache para URLs amigáveis (ex: site.com/produtos).
+|   |
+|   |-- /css/
+|   |   |-- style.css         // Estilos globais, variáveis de cor, fontes, etc.
+|   |   |-- /admin/           // <-- ADMIN: Pasta para os estilos do painel administrativo.
+|   |       |-- style.css
+|   |
+|   |-- /js/
+|   |   |-- main.js           // Scripts gerais (ex: menu mobile, interações do header/footer).
+|   |   |-- product-filters.js    // Lógica AJAX para filtrar produtos sem recarregar a página.
+|   |   |-- product-customizer.js // Lógica para calcular preço dinâmico na página de detalhes/montagem.
+|   |   |-- /admin/           // <-- ADMIN: Pasta para os scripts do painel administrativo.
+|   |       |-- dashboard.js
+|   |
+|   |-- /images/              // Imagens de produtos, logos, banners, etc.
+|
+|-- /app/                     // <-- Coração da aplicação. INACESSÍVEL publicamente.
+|   |-- /Controllers/         // Cérebro: recebe requisições, conversa com Models e chama Views.
+|   |   |-- PageController.php      // Controla páginas "estáticas" (Home, Sobre, Contato, Chef).
+|   |   |-- ProductController.php     // Controla a listagem, detalhe e filtragem de produtos (API).
+|   |   |-- AuthController.php        // Controla login, cadastro, logout e recuperação de senha.
+|   |   |-- CustomerController.php    // Controla a área do cliente logado (perfil, histórico de pedidos).
+|   |   |-- CartController.php        // Gerencia a lógica do carrinho de compras (adicionar, remover, atualizar).
+|   |   |-- CheckoutController.php    // Orquestra o processo de finalização de compra e pagamento.
+|   |   |
+|   |   |-- /Admin/           // <-- ADMIN: Módulo de Controllers do Painel.
+|   |       |-- AuthAdminController.php     // <-- ADMIN: Lida com o login/logout dos administradores.
+|   |       |-- DashboardController.php   // <-- ADMIN: Carrega a página inicial do painel.
+|   |       |-- ProductAdminController.php  // <-- ADMIN: Lógica para Criar, Ler, Atualizar e Deletar (CRUD) produtos.
+|   |       |-- OrderAdminController.php    // <-- ADMIN: Lógica para Visualizar e atualizar status dos pedidos.
+|   |       |-- UserAdminController.php     // <-- ADMIN: Lógica para gerenciar clientes e administradores.
+|   |       |-- CategoryAdminController.php // <-- ADMIN: Lógica para gerenciar categorias de produtos.
+|   |
+|   |-- /Models/              // Interação com o banco de dados.
+|   |   |-- User.php              // Lógica para usuários (buscar, criar, validar senha com password_hash).
+|   |   |-- Product.php           // Lógica de produtos (buscar todos, buscar por ID, buscar com filtros).
+|   |   |-- Option.php            // Lógica para variações e ingredientes dos produtos.
+|   |   |-- Order.php             // Lógica para salvar os pedidos no banco de dados.
+|   |   |-- Category.php          // <-- ADMIN: Model para categorias, usado por ambos os lados.
+|   |
+|   |-- /Core/                // Núcleo do sistema, classes de base.
+|   |   |-- Database.php        // Classe para a conexão segura com o MySQL (usando PDO).
+|   |   |-- Router.php          // Mapeia as URLs para os métodos dos Controllers.
+|   |   |-- Session.php         // (Opcional, mas recomendado) Classe para gerenciar sessões de forma segura.
+|
+|-- /views/                   // <-- Camada de Apresentação (o "HTML" com PHP).
+|   |-- /pages/               // O conteúdo principal de cada página.
+|   |   |-- home.php
+|   |   |-- about.php           // Para as páginas "Sobre Nós" e "Quem Somos".
+|   |   |-- chef.php            // Página sobre o Personal Chefe.
+|   |   |-- contact.php
+|   |   |-- blog.php              // Listagem de posts.
+|   |   |-- blog-post.php         // Visualização de um único post.
+|   |   |-- policies.php
+|   |   |-- products.php          // A página principal que exibe a listagem e os filtros.
+|   |   |-- product-detail.php    // Página de detalhe para um produto (incluindo o montador).
+|   |   |-- cart.php              // Página do carrinho de compras.
+|   |   |-- checkout.php          // Página para inserir endereço e escolher forma de pagamento.
+|   |   |-- order-status.php      // Página de "Obrigado" ou "Falha no Pagamento".
+|   |   |
+|   |   |-- /auth/              // Subpasta para organização.
+|   |   |   |-- login.php
+|   |   |   |-- register.php
+|   |   |
+|   |   |-- /customer/          // Subpasta para a área do cliente.
+|   |       |-- orders.php        // Histórico de pedidos.
+|   |       |-- profile.php       // Dados do perfil.
+|   |
+|   |-- /layouts/             // O "molde" principal da sua página.
+|   |   |-- main.php            // Contém <html>, <head>, <body> e inclui header/footer.
+|   |
+|   |-- /partials/            // Pedaços de HTML reutilizáveis.
+|   |   |-- header.php          // Cabeçalho do site.
+|   |   |-- footer.php          // Rodapé do site.
+|   |   |-- nav.php             // Menu de navegação principal.
+|   |   |-- product-card.php    // O card de um produto (usado em products.php).
+|   |   |-- filters.php         // A barra lateral de filtros (usada em products.php).
+|   |
+|   |-- /admin/               // <-- ADMIN: Módulo de Views do Painel.
+|       |-- /layouts/         // <-- ADMIN: Layouts específicos para o painel.
+|       |   |-- main.php        // <-- ADMIN: O template principal do painel (com menu lateral, topo, etc).
+|       |-- /partials/        // <-- ADMIN: Pedaços de HTML reutilizáveis para o painel.
+|       |   |-- sidebar.php     // <-- ADMIN: O menu lateral.
+|       |   |-- topbar.php      // <-- ADMIN: A barra do topo.
+|       |
+|       |-- dashboard.php       // <-- ADMIN: A página inicial do admin com estatísticas.
+|       |-- login.php           // <-- ADMIN: Formulário de login para administradores.
+|       |
+|       |-- /products/          // <-- ADMIN: Views para o gerenciamento de produtos.
+|       |   |-- index.php       // <-- ADMIN: Tabela com a lista de todos os produtos.
+|       |   |-- form.php        // <-- ADMIN: Formulário único para criar e editar produtos.
+|       |
+|       |-- /orders/            // <-- ADMIN: Views para o gerenciamento de pedidos.
+|       |   |-- index.php       // <-- ADMIN: Tabela com a lista de pedidos.
+|       |   |-- show.php        // <-- ADMIN: Página com os detalhes de um único pedido.
+|
+|-- /config/                  // <-- Arquivos de configuração. INACESSÍVEL publicamente.
+|   |-- database.php          // Credenciais do banco de dados (host, user, pass, dbname).
+|   |-- gateway.php           // Credenciais do Gateway de Pagamento (API Keys).
+|   |-- app.php               // Configurações gerais (URL do site, nome, etc.).
+|
+|-- /vendor/                  // <-- Pasta para dependências instaladas via Composer.
+|
+|-- composer.json             // Arquivo que define as dependências do projeto (ex: SDK do gateway).
+```

@@ -1,0 +1,20 @@
+# Ignorar dependências do Composer
+/vendor/
+
+# Ignorar dependências do Node.js (se aplicável)
+/node_modules/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de configuração de IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+DataBaseConecta.php
