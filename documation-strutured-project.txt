@@ -47,7 +47,7 @@
 |   |   |-- Category.php          // <-- ADMIN: Model para categorias, usado por ambos os lados.
 |   |
 |   |-- /Core/                // Núcleo do sistema, classes de base.
-|   |   |-- Database.php        // Classe para a conexão segura com o MySQL (usando PDO).
+|   |   |-- DataBaseConecta.php        // Classe para a conexão segura com o MySQL (usando PDO).
 |   |   |-- Router.php          // Mapeia as URLs para os métodos dos Controllers.
 |   |   |-- Session.php         // (Opcional, mas recomendado) Classe para gerenciar sessões de forma segura.
 |
