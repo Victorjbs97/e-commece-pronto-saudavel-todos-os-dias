@@ -2,9 +2,9 @@
 
 ![PHP](https://img.shields.io/badge/PHP-8.1%2B-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
-![Status](https://img.shields.io/badge/Status-Em%10Desenvolvimento-brightgreen)
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)
 
-Bem-vindo(a) ao projeto do e-commerce Pronto Saudável! Este documento contém todas as informações necessárias para configurar o ambiente de desenvolvimento e começar a contribuir.
+Bem-vindo(a) ao projeto do e-commerce Pronto Saudável! 
 
 ## 📖 Índice
 
