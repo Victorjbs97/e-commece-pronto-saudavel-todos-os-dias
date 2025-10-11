@@ -55,3 +55,27 @@ function cadastrar_usuario($conexao, $nome, $email, $senha, $telefone) {
         }
     }
 }
+
+function realizarLogin($conexao,$email,$senha){
+    try {
+        $stmt = $conexao->prepare("SELECT * FROM usuario WHERE email = :email LIMIT 1");
+        $stmt->execute([":email" => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Verifica se o usuário existe e a senha está correta
+        if ($user && password_verify($senha, $user["senha"])) {
+//Importante!!!  Isso faz gerar um novo id a cada sessão, isso impede o cliente de ter seus dados sequestrados por meio de roubo de cookies.
+            session_regenerate_id(true); 
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_email"] = $user["email"];
+            $_SESSION["user_nome"] = $user["nome"];
+            return true;
+        } else {
+            return "Email e/ou senha inválidos!";
+        }
+    } catch (Exception $e) {
+        return "Erro ao tentar fazer login: " . $e->getMessage();
+    }
+
+}
+?>
