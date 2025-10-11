@@ -58,22 +58,31 @@ function cadastrar_usuario($conexao, $nome, $email, $senha, $telefone) {
 
 function realizarLogin($conexao,$email,$senha){
     try {
+        //Consulta ao banco de dados, o prepare com :mail é importante para evitar SQL inject
         $stmt = $conexao->prepare("SELECT * FROM usuario WHERE email = :email LIMIT 1");
+        //Executa o SQL acima
         $stmt->execute([":email" => $email]);
+        //Retorna o resultado da consulta, o fetch especifica um array associativo com as informações do BD relacionados com o email. se não tiver o retorno é false.
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Verifica se o usuário existe e a senha está correta
         if ($user && password_verify($senha, $user["senha"])) {
 //Importante!!!  Isso faz gerar um novo id a cada sessão, isso impede o cliente de ter seus dados sequestrados por meio de roubo de cookies.
             session_regenerate_id(true); 
+            //Uma variavel global como um array, onde armazena os dados, quando tiver o adm tem que mudar aqui.
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["user_email"] = $user["email"];
             $_SESSION["user_nome"] = $user["nome"];
+            $_SESSION["user_tipo"] = $user["tipo_usuario"];
+            //Se tudo for bem sucedido, retorna um true para a função, vai ser usado para liberar o login.
             return true;
         } else {
+            //Retorna uma mensagem ao usuário.
             return "Email e/ou senha inválidos!";
         }
+        // caso falhe o try
     } catch (Exception $e) {
+        //retorne para o adm.
         return "Erro ao tentar fazer login: " . $e->getMessage();
     }
 
