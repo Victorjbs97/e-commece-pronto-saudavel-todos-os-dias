@@ -49,7 +49,9 @@
             </div>
             <div>
                 <button type="submit">Entrar</button>
+                <a href="register.php">Cadastrar</a>
             </div>
+
         </form>
     </div>
 
