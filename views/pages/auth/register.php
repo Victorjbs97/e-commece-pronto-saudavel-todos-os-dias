@@ -77,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <input type="text" name="telefone" value="<?= htmlspecialchars($telefone) ?>">
 
       <button type="submit">Cadastrar</button>
+      <a href="login.php">login</a>
     </form>
   </div>
 </body>
