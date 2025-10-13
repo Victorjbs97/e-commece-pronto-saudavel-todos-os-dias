@@ -25,6 +25,7 @@ body {
   width: 100%;
   max-width: 400px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .container:hover {
@@ -41,13 +42,13 @@ h2 {
 }
 
 /* ======== FORM ======== */
-.form-cadastro {
+.form-cadastro, .form-login {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.form-cadastro label {
+.form-cadastro, .form-login {
   font-weight: 600;
   color: #555;
   font-size: 0.9rem;
@@ -62,6 +63,23 @@ h2 {
 }
 
 .form-cadastro input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+  outline: none;
+}
+
+
+/* ==== Form de LOGIN INPUTs  */
+
+.form-login input {
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.form-login input:focus {
   border-color: #1976d2;
   box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
   outline: none;

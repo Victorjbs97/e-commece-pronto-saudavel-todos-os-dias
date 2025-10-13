@@ -37,7 +37,7 @@
         <?php if (!empty($erro)): ?>
             <div class="erro"><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8'); ?></div>
         <?php endif; ?>
-        <form action="" method="post">
+        <form action="" method="post" class="form-login">
             <div>
                 
                 <label for="">E-mail:</label>
