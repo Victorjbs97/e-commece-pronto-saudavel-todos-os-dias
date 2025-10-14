@@ -6,6 +6,10 @@ require_once '../../../app/core/DataBaseConecta.php';
 // Inclui o arquivo que contém a função 'cadastrar_usuario'.
 require_once '../../../app/models/User.php'; 
 
+require_once '../../../app/core/Session.php';
+
+verificaLoginPaginaLogin();
+
 // 2. Inicialização de Variáveis (Inclui variáveis para pré-preenchimento do formulário)
 // Variável para armazenar a mensagem de feedback (sucesso ou erro) ao usuário.
 $mensagem = "";
