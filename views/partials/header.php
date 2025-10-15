@@ -36,7 +36,7 @@
         </li>
 
         <li>
-            <a href="../pages/auth/login.php"> <div id="usuario" ></div> </a>
+            <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php"> <div id="usuario" ></div> </a>
         </li>
 
     </ul>
