@@ -12,7 +12,5 @@
     
     <?php require_once "../views/partials/footer.php" ?>
 
-
-
 </body>
 </html>
