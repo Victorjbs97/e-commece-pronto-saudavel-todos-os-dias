@@ -1,6 +1,3 @@
-
-<link rel="stylesheet" href=css/produto_card.css">
-
 <article class="produto_card_info">
 
     <figure class="imagem_produto">
