@@ -18,6 +18,10 @@ header{
     width: 100vw;
     height: 150px;
     background-color: var(--cor-primaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -216,24 +220,26 @@ header{
 
 #nav{
 
-    height: 50px;
-    background-color: white;
     border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    width: 100%;
+    
 }
 
 #lista_nav{
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
     list-style: none;
-    
+
+    background-color: white;
+    height: 100%;
+
     font-family: var(--text);
     font-size: large;
     font-weight: 600;
-
+    
 }
+
