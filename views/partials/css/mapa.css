@@ -6,16 +6,8 @@
 
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; 
-    overflow: hidden; 
-}
-
 /* CONTAINER PRINCIPAL ( fullscreen-section ) */
-.fullscreen-section {
-    height: 100vh; 
+.fullscreen-section { 
     width: 100%;
     
     display: flex;         
@@ -58,8 +50,7 @@ html, body {
 .mapa-container,
 .image-container {
     flex-grow: 1;           /* Ocupa o espaço vertical restante no content-wrapper */
-    flex-basis: 0;          
-    overflow: hidden;       
+    flex-basis: 0;                
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     
@@ -79,7 +70,7 @@ html, body {
     object-fit: cover;      
     border: none;
     display: block;
-    /* A classe da imagem é necessária para o flex-grow */
+   
 }
 
 /* Estilo para a informação de endereço (localizada no final da seção) */
