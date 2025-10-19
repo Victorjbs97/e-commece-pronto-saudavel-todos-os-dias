@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 
-
-
 <!-- Começo do menu -->
 <div id="menu">
 
@@ -12,6 +10,7 @@
 <!-- Logo -->
 <div id="logo"></div>
 
+<!-- Barra de pesquisa -->
 <div id="busca" >
     <input type="text" placeholder=" Busque aqui..." >
 </div>
@@ -47,12 +46,6 @@
 
 <!-- Fim do menu -->
 </div>
-
-
-
-
-
-
 
 <!-- Navegador -->
 <nav id="nav">
