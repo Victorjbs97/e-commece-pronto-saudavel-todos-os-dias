@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden; /* evita scroll horizontal indesejado */
-}
-
 /* Container do carrossel */
 #carouselExampleSlidesOnly {
     width: 100%;
