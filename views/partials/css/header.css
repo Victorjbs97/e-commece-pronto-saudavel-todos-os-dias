@@ -295,7 +295,10 @@
 
 .lista_hamburguer {
 
+    display: flex;
+    flex-direction: column;
     list-style: none;
+    gap: 20px;
 
 }
 
