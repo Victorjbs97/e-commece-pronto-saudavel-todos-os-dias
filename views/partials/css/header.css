@@ -13,10 +13,9 @@
 
 }
 
-header{
+#desktop {
 
     width: 100%;
-    
     
     background-color: var(--cor-primaria);
     display: flex;
@@ -24,8 +23,17 @@ header{
     justify-content: space-around;
     align-items: center;
 
+}
 
+#mobile {
 
+    width: 100%;
+    
+    background-color: var(--cor-primaria);
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
@@ -247,12 +255,85 @@ header{
     
 }
 
+/* Menu Hamburguer */
+
+#hamburguer{
+
+    margin-right: 1vw;
+
+}
+
+#offcanvasRight{
+
+    background: white;
+    width: 80%;
+    transition: 0.2s;        
+
+}
+
+.hamburger-btn {
+
+  background: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;/* remove contorno do foco */
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+/* SVG dentro do botão */
+.hamburger-btn svg path {
+  
+    fill: var(--cor-primaria);
+    transition: none;
+
+}
+
+.lista_hamburguer {
+
+    list-style: none;
+
+}
+
+.lista_hamburguer a {
+
+    text-decoration: none;
+    font-family: var(--text);
+    color: black;
+    
+}
+
 @media (max-width: 770px) {
 
-   header {
+   #desktop {
 
     display: none;
 
    } 
+
+   #mobile {
+
+    display: flex;
+
+   }
+
+   #logo{
+
+    height: 50px;
+    width: 50px;
+
+    margin: 1vh;
+
+   }
+
+   #busca{
+
+    width: 64vw;
+
+   }
 
 }
