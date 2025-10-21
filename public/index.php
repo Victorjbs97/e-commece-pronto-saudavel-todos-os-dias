@@ -13,6 +13,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
+
     <title>Pronto & Saudavel</title>
 </head>
 <body>
@@ -23,6 +24,15 @@
     <!-- Carrossel -->
     <?php require_once "../views/partials/carrossel.php"; ?>
 
+    <?php
+
+        define('VIEWS_PATH', __DIR__ . '/../views');
+
+        // 2. Carregamos o nosso "molde" principal.
+        // O 'main.php' agora é o responsável por montar o resto da página.
+        require_once VIEWS_PATH . '/layouts/main.php';
+
+    ?>
     <!-- Footer -->
     <?php require_once "../views/partials/footer.php"; ?>
 

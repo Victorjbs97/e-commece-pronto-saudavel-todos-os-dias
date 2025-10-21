@@ -29,7 +29,7 @@
             
             <div class="image-container"> 
                 <h2 class="titulo_fachada">Fachada da Pronto & Saudavel</h2>
-                <img src="../partials/img/fachada_pronto_e_saudavel.svg" alt="Fachada da Marmitaria Pronto e Saudavel">
+                <img src="../public/img/fachada_pronto_e_saudavel.svg" alt="Fachada da Marmitaria Pronto e Saudavel">
             </div>
         </div>  
         
