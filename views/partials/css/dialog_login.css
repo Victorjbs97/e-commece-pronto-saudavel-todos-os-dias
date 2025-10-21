@@ -1,0 +1,47 @@
+#loginDialog {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #1c6133;
+    border-radius: 10px;
+    padding: 10px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#loginDialog button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #1c6133;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#loginDialog iframe {
+    width: 100%;
+    height: calc(100% - 40px); /* espaço para o botão */
+    border: none;
+}
+
+#teste{
+
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+
+}
+
+dialog::backdrop{
+
+    backdrop-filter: blur(2px) ; 
+
+}
