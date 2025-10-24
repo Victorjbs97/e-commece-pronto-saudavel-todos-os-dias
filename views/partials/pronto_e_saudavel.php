@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sessão Pronto e Saudavel</title>
-    <link rel="stylesheet" href="../partials/css/mapa.css"> 
-</head>
-<body>
 
     <section class="fullscreen-section">
 
@@ -38,7 +29,5 @@
         </address>
         
     </section>
-</body>
-</html>
 
 
