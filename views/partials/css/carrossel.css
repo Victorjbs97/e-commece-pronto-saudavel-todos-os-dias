@@ -12,7 +12,7 @@ html, body {
 /* Container do carrossel */
 #carouselExampleSlidesOnly {
     width: 100%;
-    max-height: 300px; /* altura padrão para desktop/tablet */
+    max-height: 600px; /* altura padrão para desktop/tablet */
     overflow: hidden;
     display: block; /* remove qualquer flex desnecessário */
     position: relative;
