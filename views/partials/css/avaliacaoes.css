@@ -61,7 +61,9 @@
 .btn_avancar{
     right: 0;
 }
-
+.btn_voltar, .btn_avancar:hover{
+    cursor: pointer;
+}
 
 /* MEDIA QUERY */
 
