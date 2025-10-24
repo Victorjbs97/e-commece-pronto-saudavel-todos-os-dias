@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento do botão VOLTAR
     btnVoltar.addEventListener('click', () => {
         const cardsPerSlide = getCardsPerSlide();
-        
+        //efs
         // Calcula o novo índice, garantindo que não seja menor que zero
         currentIndex = Math.max(currentIndex - cardsPerSlide, 0);
         
