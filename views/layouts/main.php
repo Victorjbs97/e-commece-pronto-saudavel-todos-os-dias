@@ -23,7 +23,8 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/galeria-de-fotos.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/avaliacaoes.css">
-      <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/mapa.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/mapa.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/sessao_personal_chefe.css">
 
 </head>
 <body>

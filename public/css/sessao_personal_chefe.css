@@ -1,0 +1,152 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.sessao_personal_chefe_home {
+    display: grid;
+    height: 90vh;
+    min-height: 90vh;
+    grid-template-rows: 1fr 10fr;
+}
+
+.cabecalho_personal_chefe {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+}
+
+.personal_chefe {
+    background-color: #12602C;
+    display: grid;
+    
+    grid-template-columns: 1fr 1.5fr; 
+    
+    align-items: center;
+}
+
+.bloco_esquerdo_imagem {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+}
+
+.imagem_personal_chefe img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+}
+
+.bloco_direito_informacoes {
+    color: white;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    align-items: center;
+    height: 100%;
+}
+
+.informacoes {
+    display: grid;
+    align-items: center;
+    width: 85%;
+    justify-self: center; 
+}
+
+.texto {
+    text-align: justify;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: start;
+    justify-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.botoes_personal_chefe {
+    padding: 14px 14px;
+    background-color: white;
+    color: #12602C;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+/* RESPONSIVO (Tablets - 1024px ou menos)  */
+@media (max-width: 1024px) { 
+
+    .sessao_personal_chefe_home {
+        height: auto; 
+        padding-bottom: 40px;
+    }
+
+    .personal_chefe {
+        /* Layout empilhado JÁ em 1024px */
+        grid-template-columns: 1fr;
+        padding: 40px 0; 
+    }
+
+    .imagem_personal_chefe img {
+        max-width: 420px; 
+    }
+
+    .bloco_direito_informacoes {
+        grid-template-rows: auto auto; 
+        gap: 40px; 
+        justify-items: center; 
+        margin-top: 30px; 
+    }
+
+    .informacoes {
+        width: 80%; 
+        text-align: center; 
+        font-size: 1.1rem; 
+    }
+
+    .botoes {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        padding: 0 20%; 
+    }
+
+    .botoes_personal_chefe {
+        max-width: 320px; 
+    }
+}
+
+
+
+/* RESPONSIVO (Mobile - 768px ou menos)    */
+@media (max-width: 768px) {
+    
+    .imagem_personal_chefe img {
+        max-width: 320px; 
+    }
+
+    .informacoes {
+        width: 85%;
+        font-size: 1rem; 
+    }
+
+    .botoes {
+        padding: 0 15%; 
+        gap: 15px;
+    }
+
+    .botoes_personal_chefe {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
