@@ -10,8 +10,8 @@
             $produtosMaisVendidos = [
                 ['id' => 1, 'nome' => 'Marmita 1', 'preco' => 27.00, 'imagem_url' => $baseUrl . '/public/images/marmita.jpeg'],
                 ['id' => 2, 'nome' => 'Sopa 1', 'preco' => 19.00, 'imagem_url' => $baseUrl . '/public/images/sopa.jpg'],
-                ['id' => 3, 'nome' => 'Marmita 2', 'preco' => 27.00, 'imagem_url' => $baseUrl . '/public/images/marmita.jpeg'],
-                ['id' => 4, 'nome' => 'Sobremesa 1', 'preco' => 15.00, 'imagem_url' => $baseUrl . '/public/images/sobremesa.jpg'],
+                ['id' => 3, 'nome' => 'Sobremesa 1', 'preco' => 15.00, 'imagem_url' => $baseUrl . '/public/images/sobremesa.jpg'],
+                ['id' => 4, 'nome' => 'Marmita 2', 'preco' => 27.00, 'imagem_url' => $baseUrl . '/public/images/marmita.jpeg'],
                 ['id' => 5, 'nome' => 'Sopa 2', 'preco' => 17.50, 'imagem_url' => $baseUrl . '/public/images/sopa.jpg'],
                 ['id' => 6, 'nome' => 'Sobremesa 2', 'preco' => 18.20, 'imagem_url' => $baseUrl . '/public/images/sobremesa.jpg']
             ];
