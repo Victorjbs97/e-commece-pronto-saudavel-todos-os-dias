@@ -32,13 +32,10 @@
 <!-- Faixa de Aviso -->
 <div class="marquee-container">
     <div class="marquee">
-        <span class="marquee-content">
-            Entregas e retiradas somente aos sábados na Grande São Paulo.Formas de Pagamento: Cartões de Crédito, Débito, VA, VR e dinheiro.
-        </span>
-        <span class="marquee-content">
-            Entregas e retiradas somente aos sábados na Grande São Paulo. 
-            Formas de Pagamento: Cartões de Crédito, Débito, VA, VR e dinheiro.
-        </span>
+        <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
+        <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
+        <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
+        <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
     </div>
 </div>
 
