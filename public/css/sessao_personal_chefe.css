@@ -5,6 +5,8 @@
 }
 
 .sessao_personal_chefe_home {
+    background-color: #12602C;
+
     display: grid;
     height: 90vh;
     min-height: 90vh;
@@ -16,10 +18,11 @@
     align-items: center;
     justify-items: center;
     width: 100vw;
+    color: white;
 }
 
 .personal_chefe {
-    background-color: #12602C;
+    
     display: grid;
     
     grid-template-columns: 1fr 1.5fr; 
@@ -52,7 +55,7 @@
 .informacoes {
     display: grid;
     align-items: center;
-    width: 85%;
+    width: 80%;
     justify-self: center; 
 }
 
@@ -65,12 +68,12 @@
     grid-template-columns: 1fr 1fr;
     align-self: start;
     justify-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 0 20px;
 }
 
 .botoes_personal_chefe {
-    padding: 14px 14px;
+    padding: 10px 12px;
     background-color: white;
     color: #12602C;
     border-radius: 10px;
