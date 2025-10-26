@@ -20,16 +20,21 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produto_card.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/carrosel-produtos.css">
+
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/galeria-de-fotos.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/avaliacaoes.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/mapa.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/sessao_personal_chefe.css">
+
 </head>
 <body>
-    <?php require_once VIEWS_PATH . '/partials/header.php'; ?>
-
+    
     <main>
         <?php require_once VIEWS_PATH . '/pages/home.php'; ?>
     </main>
     
-    <?php require_once VIEWS_PATH . '/partials/footer.php'; ?>
-
+   
     <script src="<?= $baseUrl ?>/public/js/carrossel-produtos.js"></script>
+    <script src="/public/js/avaliacao.js"></script>
 </body>
 </html>
