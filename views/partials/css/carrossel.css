@@ -5,12 +5,10 @@
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden; /* evita scroll horizontal indesejado */
-}
-
 /* Container do carrossel */
 #carouselExampleSlidesOnly {
+    
+    margin-top: 130px;
     width: 100%;
     max-height: 600px; /* altura padrão para desktop/tablet */
     overflow: hidden;
@@ -66,6 +64,8 @@ html, body {
 /* Responsividade */
 @media (max-width: 768px) {
     #carouselExampleSlidesOnly {
+
+        margin-top: 60px;
         max-height: 250px; /* altura menor em tablets */
     }
 }
@@ -81,6 +81,7 @@ html, body {
 
 @media (max-width: 480px) {
     #carouselExampleSlidesOnly {
+        margin-top: 60px;
         max-height: 180px; /* altura menor em celulares pequenos */
     }
 }
