@@ -14,40 +14,46 @@
     overflow: hidden;
     display: block; /* remove qualquer flex desnecessário */
     position: relative;
+    
 }
 
 /* Imagens do carrossel */
 .img_banner {
+
     width: 100%;
     height: auto; /* ajusta a altura automaticamente */
     max-height: 100%;
     object-fit: cover;  /* preenche o container sem distorcer */
     object-position: center center; /* centraliza o foco da imagem */
     display: block;
+
 }
 
 /* Faixa de aviso - Marquee moderno */
 .marquee-container {
-    width: 100%;
+    
+    width: 100vw;
     height: 50px;
     overflow: hidden;
-    padding: 10px 0;
     box-sizing: border-box;
+
 }
 
 .marquee {
+
     display: flex;
     width: max-content; /* largura do conteúdo total */
     animation: marquee 30s linear infinite;
-
     font-weight: 600;
 
 }
 
 .marquee-content {
+
     white-space: nowrap;
     flex-shrink: 0;
     padding-right: 15px; /* espaço entre repetições do texto */
+    
 }
 
 
