@@ -1,5 +1,3 @@
-
-
 .section-carousel {
     padding: 2rem 0; 
 }
@@ -13,7 +11,7 @@
 
 .carousel-container {
     position: relative; 
-    width: 100%;
+    width: 95%;
     max-width: 1200px; /* Largura máxima do carrossel */
     margin: 0 auto; /* Centraliza o container na página */
 }
@@ -30,6 +28,10 @@
     /* Esconde a barra de rolagem feia */
     scrollbar-width: none; /* Para Firefox */
     -ms-overflow-style: none;  /* Para Internet Explorer e Edge */
+
+    /* Adiciona um espaçamento entre os cards */
+    gap: 1.5rem; /* Padrão moderno */
+
 }
 
 /* Esconde a barra de rolagem para navegadores Webkit (Chrome, Safari) */
@@ -45,12 +47,6 @@
     /* Garante que os cards não encolham e mantenham sua largura */
     flex: 0 0 280px; /* flex-grow: 0, flex-shrink: 0, flex-basis: 280px */
 }
-
-/* Adiciona um espaçamento entre os cards */
-.carousel {
-    gap: 1.5rem; /* Padrão moderno */
-}
-
 
 .carousel-button {
     position: absolute; /* Posiciona os botões sobre o carrossel */

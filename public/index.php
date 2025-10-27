@@ -7,6 +7,9 @@
     <!-- CSS do header -->
     <link rel="stylesheet" href="../views/partials/css/header.css">
 
+    <!-- CSS do Dialog de login -->
+    <link rel="stylesheet" href="../views/partials/css/dialog_login.css">
+
     <!-- CSS do carrossel -->
     <link rel="stylesheet" href="../views/partials/css/carrossel.css">
 
@@ -21,9 +24,12 @@
     <!-- Header -->
     <?php require_once "../views/partials/header.php"; ?>
 
+    
+
     <!-- Carrossel -->
     <?php require_once "../views/partials/carrossel.php"; ?>
 
+    
     <?php
 
         define('VIEWS_PATH', __DIR__ . '/../views');

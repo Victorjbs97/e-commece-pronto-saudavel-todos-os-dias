@@ -52,7 +52,7 @@
 
     <ul id="lista_nav">
 
-        <li>Inicio</li>
+        <li><a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php">Inicio</a></li>
         <li>Personal Chefe</li>
         <li>Marmitas</li>
         <li>Outros Produtos</li>
