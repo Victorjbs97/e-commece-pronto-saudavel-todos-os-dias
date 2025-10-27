@@ -36,6 +36,12 @@
         <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
         <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
         <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
+        <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
+        <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
+        <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
+        <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
+        <span class="marquee-content">Entregas e retiradas apenas aos sábados na Grande SP</span>
+        <span class="marquee-content">Aceitamos cartão de crédito, débito, VA, VR e dinheiro</span>
     </div>
 </div>
 
