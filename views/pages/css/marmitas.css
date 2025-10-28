@@ -1,0 +1,39 @@
+/* ===========================
+   Estilo do título principal
+   =========================== */
+.titulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;  /* afastar do header */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ===========================
+   Estilo do container principal (main)
+   =========================== */
+main.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 0 5%;
+    margin-bottom: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+        margin-top: 100px;
+    }
+
+    main.product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+}
