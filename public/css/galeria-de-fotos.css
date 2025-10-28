@@ -1,0 +1,31 @@
+.galeria {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px 0;
+ }
+ 
+.galeria h2 {
+        font-size: 22px;
+        margin-bottom: 25px;
+        font-family: Arial, sans-serif;
+}
+ 
+.galeria-fotos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        justify-items: center;
+        width: 90%;
+        max-width: 900px;
+}
+ 
+.foto {
+        width: 100%;
+        max-width: 270px;
+        height: 420px;
+        border-radius: 12px;
+        background-size: cover;
+        background-position: center;
+        background-color: black;
+}

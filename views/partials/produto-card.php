@@ -5,9 +5,10 @@
 <article class="product-card">
 
     <figure class="product-card__figure">
-        <img class="product-card__image" 
+        <img class="product-card__image"
              src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
              alt="<?= htmlspecialchars($produto['nome']) ?>">
+        </img>     
     </figure>
 
     <div class="product-card__content">

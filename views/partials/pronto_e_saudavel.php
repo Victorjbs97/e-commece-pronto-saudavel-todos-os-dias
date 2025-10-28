@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sessão Pronto e Saudavel</title>
-    <link rel="stylesheet" href="../partials/css/mapa.css"> 
-</head>
-<body>
 
     <section class="fullscreen-section">
 
@@ -29,7 +20,7 @@
             
             <div class="image-container"> 
                 <h2 class="titulo_fachada">Fachada da Pronto & Saudavel</h2>
-                <img src="../public/img/fachada_pronto_e_saudavel.svg" alt="Fachada da Marmitaria Pronto e Saudavel">
+                <img src="\e-commece-pronto-saudavel-todos-os-dias\public\img\fachada_pronto_e_saudavel.svg" alt="Fachada da Marmitaria Pronto e Saudavel">
             </div>
         </div>  
         
@@ -38,7 +29,5 @@
         </address>
         
     </section>
-</body>
-</html>
 
 
