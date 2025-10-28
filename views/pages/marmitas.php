@@ -25,6 +25,8 @@ require_once "../partials/todos-produtos.php"
     <h1 class="titulo">Todos os Produtos</h1>
 
     <main class="product-grid">
+
+
         <?php
 
         exibirProdutos($conexao, $template_card);

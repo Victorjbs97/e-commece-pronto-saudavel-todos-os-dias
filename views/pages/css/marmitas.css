@@ -1,20 +1,41 @@
 /* ===========================
-   Estilo do título principal
+   Reset e Configuração Base
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #2c3e50;
+
+}
+
+/* ===========================
+   Espaçamento para o Header Fixo
    =========================== */
 .titulo {
-    font-family: 'Inter', sans-serif;
+    margin-top: 150px; /* altura aproximada do header */
+}
+
+/* ===========================
+   Estilo do Título Principal
+   =========================== */
+.titulo {
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
     color: #2c3e50;
-    margin-top: 20px;  /* afastar do header */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 /* ===========================
-   Estilo do container principal (main)
+   Estilo do Container Principal (Main)
    =========================== */
 main.product-grid {
     display: grid;
@@ -24,11 +45,17 @@ main.product-grid {
     margin-bottom: 100px;
 }
 
-/* Responsividade */
+/* ===========================
+   Responsividade
+   =========================== */
 @media (max-width: 768px) {
+    main {
+        margin-top: 100px; /* header menor no mobile */
+    }
+
     .titulo {
         font-size: 1.5rem;
-        margin-top: 100px;
+        margin-bottom: 20px;
     }
 
     main.product-grid {
