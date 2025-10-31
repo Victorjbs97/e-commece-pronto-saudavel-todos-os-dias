@@ -20,12 +20,12 @@
         max-width: 900px;
 }
  
-.foto {
+.foto img{
         width: 100%;
         max-width: 270px;
         height: 420px;
         border-radius: 12px;
         background-size: cover;
         background-position: center;
-        background-color: black;
+       
 }
