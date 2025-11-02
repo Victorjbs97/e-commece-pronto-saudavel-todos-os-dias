@@ -19,7 +19,9 @@ html, body {
     
     width: 100%;
     
-    display: flex;         
+    display: flex;  
+    justify-content: center;
+    align-items: center;       
     flex-direction: column; 
     
     font-family: Arial, sans-serif;
@@ -51,7 +53,7 @@ html, body {
     flex-direction: column; /* Empilha em mobile */
     flex-grow: 1;           /* ESSENCIAL: Ocupa todo o espaço vertical restante */
     gap: 10px;              
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
 }
 
