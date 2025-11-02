@@ -35,6 +35,6 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     
    
     <script src="<?= $baseUrl ?>/public/js/carrossel-produtos.js"></script>
-    <script src="/public/js/avaliacao.js"></script>
+    <script src="<?= $baseUrl ?>/public/js/avaliacao.js"></script>
 </body>
 </html>

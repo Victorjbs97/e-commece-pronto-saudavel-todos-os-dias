@@ -36,7 +36,7 @@
     
     min-height: 150px; /* Altura mínima para demonstração */
     /* Configuração padrão para desktop: 3 cards visíveis */
-    flex: 0 0 calc(33.333% - 20px); /* 33.333% da largura - margem */
+    flex: 0 0 calc(33.666% - 20px); /* 33.333% da largura - margem */
     margin-right: 20px; /* Espaçamento entre os cards */
 }
 .artigo_avaliacao:last-child {
