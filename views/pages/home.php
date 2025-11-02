@@ -11,8 +11,6 @@ require __DIR__ .'/../partials/sessao_personal_chefe.php';
 
 require __DIR__ .'/../partials/galeria-de-fotos.php';
 
-require __DIR__ .'/../partials/atendimentoPersonalizado.php';
-
 require __DIR__ .'/../partials/avaliacoes.php';
 
 require __DIR__ .'/../partials/pronto_e_saudavel.php';

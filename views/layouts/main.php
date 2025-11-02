@@ -18,6 +18,7 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pronto Saudável</title>
 
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/home.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produto_card.css">
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/avaliacaoes.css">
@@ -54,5 +55,10 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
 
     <script src="<?= $baseUrl ?>/public/js/carrossel-produtos.js"></script>
     <script src="<?= $baseUrl ?>/public/js/avaliacao.js"></script>
+     <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous">
+    </script>
 </body>
 </html>
