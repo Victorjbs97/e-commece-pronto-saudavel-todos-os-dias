@@ -5,13 +5,13 @@
     <div class="galeria-fotos">
 
         <div class="foto">
-            <img src="../public/img/galeriafoto1.png" alt="">
+            <img src="../public/images/pg_home_images/galeriafoto1.png" alt="">
         </div>
         <div class="foto">
-            <img src="../public/img/galeriafoto2.png" alt="">
+            <img src="../public/images/pg_home_images/galeriafoto2.png" alt="">
         </div>
         <div class="foto">
-            <img src="../public/img/galeriafoto3.png" alt="">
+            <img src="../public/images/pg_home_images/galeriafoto3.png" alt="">
         </div>
         
     </div>

@@ -19,23 +19,47 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     <title>Pronto Saudável</title>
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produto_card.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/carrosel-produtos.css">
-
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/galeria-de-fotos.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/home.css">
+    
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/avaliacaoes.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/mapa.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/sessao_personal_chefe.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/atendimento-personalizado.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/marmitas.css">
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/header.css">
+
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/dialog_login.css">
 </head>
 <body>
     
-    <main>
-        <?php require_once VIEWS_PATH . '/pages/home.php'; ?>
+
+
+      <?php require_once VIEWS_PATH . '/partials/header.php'; ?>
+
+   <main>
+        <?php
+        
+        if (file_exists($viewFile)) {
+            require_once $viewFile;
+        } else {
+            echo "<p>Erro: Página não encontrada.</p>";
+        }
+        ?>
     </main>
-    
+
+        <?php require_once VIEWS_PATH . '/partials/footer.php'; ?>
+
    
+
+
     <script src="<?= $baseUrl ?>/public/js/carrossel-produtos.js"></script>
     <script src="<?= $baseUrl ?>/public/js/avaliacao.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous">
+    </script>
 </body>
 </html>
