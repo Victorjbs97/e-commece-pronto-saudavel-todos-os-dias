@@ -8,9 +8,6 @@
     margin-bottom: 20px;
     font-size: 2em;
 }
-.artigo_avaliacao{
-    background-color: white;
-}
 .carrossel{
     display: flex;
     align-items: center;
@@ -32,12 +29,15 @@
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1);
-    text-align: center;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    min-height: 150px; /* Altura mínima para demonstração */
     /* Configuração padrão para desktop: 3 cards visíveis */
-    flex: 0 0 calc(30% - 20px); /* 33.333% da largura - margem */
+    flex: 0 0 calc(33.333% - 20px); /* 33.333% da largura - margem */
     margin-right: 20px; /* Espaçamento entre os cards */
-    min-height: 100px; /* Altura mínima para demonstração */
 }
 .artigo_avaliacao:last-child {
     margin-right: 0; /* Remove a margem do último card para evitar barra de rolagem desnecessária */
