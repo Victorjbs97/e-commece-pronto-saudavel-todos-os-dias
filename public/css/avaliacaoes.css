@@ -1,5 +1,5 @@
 .sessao_avaliacoes{
-    background-color: #A9BCC3;
+    background-color: #12602C;
     padding: 40px 0;
     text-align: center;
 }
@@ -45,7 +45,7 @@
 .btn_voltar, .btn_avancar{
     background: none;
     border: none;
-    color: rgb(61, 61, 61);
+    color: rgb(255, 255, 255);
     font-size: 2em;
     padding: 0 10px;
     position: absolute;
