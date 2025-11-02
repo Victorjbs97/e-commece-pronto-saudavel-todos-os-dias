@@ -1,0 +1,66 @@
+/* ===========================
+   Reset e Configuração Base
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #2c3e50;
+
+}
+
+/* ===========================
+   Espaçamento para o Header Fixo
+   =========================== */
+.titulo {
+    margin-top: 150px; /* altura aproximada do header */
+}
+
+/* ===========================
+   Estilo do Título Principal
+   =========================== */
+.titulo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ===========================
+   Estilo do Container Principal (Main)
+   =========================== */
+main.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 0 5%;
+    margin-bottom: 100px;
+}
+
+/* ===========================
+   Responsividade
+   =========================== */
+@media (max-width: 768px) {
+    main {
+        margin-top: 100px; /* header menor no mobile */
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    main.product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+}
