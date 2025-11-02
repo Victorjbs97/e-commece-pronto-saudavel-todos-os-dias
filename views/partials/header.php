@@ -12,7 +12,7 @@
 
 <!-- Barra de pesquisa -->
 <div id="busca" >
-    <input type="text" placeholder=" Busque aqui..." >
+    <input type="text" placeholder="🔍" >
 </div>
 
 </div>
@@ -81,7 +81,7 @@
 
         <!-- Barra de pesquisa -->
         <div id="busca" >
-            <input type="text" placeholder=" Busque aqui..." >
+            <input type="text" placeholder="🔍" >
         </div>
 
     </div>
