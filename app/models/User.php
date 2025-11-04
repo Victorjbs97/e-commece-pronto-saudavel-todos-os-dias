@@ -88,7 +88,7 @@ function realizarLogin($conexao,$email,$senha){
 
 }
 
-function cadastrarProduto($conexao,$nome,$descricao,$valor,$estoque,$imagem){
+function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem){
     if(empty($nome) || empty($preco)){
         return "Nome e Preço são obrigatórios.";
     }
@@ -106,10 +106,12 @@ function cadastrarProduto($conexao,$nome,$descricao,$valor,$estoque,$imagem){
         $consulta->bindValue(":nome",$nome);
         $consulta->bindValue(":descricao",$descricao);
         $consulta->bindValue(":valor",$valor);
-        $consulta->bindValue(":estoque",(int)$estoque);
+        $consulta->bindValue(":estoque",(int)$estoque, PDO::PARAM_INT);
         $consulta->bindValue(":imagem_url",$imagem);
 
-        $consulta->execute();
+        $consulta->execute([
+            ""
+        ]);
     }catch(PDOException $e){
         return "Erro ao cadastra produto.";
     }
