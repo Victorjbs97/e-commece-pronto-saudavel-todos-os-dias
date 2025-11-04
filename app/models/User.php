@@ -109,9 +109,7 @@ function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem)
         $consulta->bindValue(":estoque",(int)$estoque, PDO::PARAM_INT);
         $consulta->bindValue(":imagem_url",$imagem);
 
-        $consulta->execute([
-            ""
-        ]);
+        $consulta->execute();
     }catch(PDOException $e){
         return "Erro ao cadastra produto.";
     }
