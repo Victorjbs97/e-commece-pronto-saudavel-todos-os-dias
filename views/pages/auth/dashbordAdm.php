@@ -14,5 +14,4 @@
 
         cadastrarProduto($conexao,$nome,$descricao,$valor,$estoque,$imagem_url);
     }
-
 ?>
