@@ -52,7 +52,7 @@ header{
 
     width: 100%;
 
-    background-image: url('../img/fundo_legumes.png');
+    background-image: url('../images/header_images/fundo_legumes.png');
     background-position: center;
     background-size: cover;
 
@@ -74,7 +74,7 @@ header{
 
 #logo{
 
-    background-image: url('../img/logo.png');
+    background-image: url('../images/header_images/logo.png');
 
     background-size: cover;
 
@@ -148,7 +148,7 @@ header{
 
 #chefinho{
 
-    background: url('../img/icons/chefe.png');
+    background: url('../images//icons/chefe.png');
     background-position: 50% 50%;
     background-size: 79px;
     background-repeat: no-repeat;
@@ -160,7 +160,7 @@ header{
 
 :hover#chefinho{
 
-    background: url('../img/icons/chefe_nome.png');
+    background: url('../images/icons/chefe_nome.png');
     background-position: 50% 80%;
     background-size: 80px;
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@ header{
 
 #entrega{
 
-    background: url('../img/icons/entrega.png');
+    background: url('../images/icons/entrega.png');
     background-position: 50% 50%;
     background-size: 75px;
     background-repeat: no-repeat;
@@ -184,7 +184,7 @@ header{
 
 :hover#entrega{
 
-    background: url('../img/icons/entrega_nome.png');
+    background: url('../images/icons/entrega_nome.png');
     background-position: 50% 80%;
     background-size: 75px;
     background-repeat: no-repeat;
@@ -196,7 +196,7 @@ header{
 
 #compras{
 
-    background: url('../img/icons/carrinho_vazio.png');
+    background: url('../images/icons/carrinho_vazio.png');
     background-position: 50% 55%;
     background-size: 73px;
     background-repeat: no-repeat;
@@ -208,7 +208,7 @@ header{
 
 :hover#compras{
 
-    background: url('../img/icons/carrinho_vazio_nome.png');
+    background: url('../images/icons/carrinho_vazio_nome.png');
     background-position: 50% 85%;
     background-size: 100px;
     background-repeat: no-repeat;
@@ -220,7 +220,7 @@ header{
 
 #usuario{
 
-    background: url('../img/icons/user.png');
+    background: url('../images/icons/user.png');
     background-position: 50% 50%;
     background-size: 79px;
     background-repeat: no-repeat;
@@ -232,7 +232,7 @@ header{
 
 :hover#usuario{
 
-    background: url('../img/icons/user_nome.png');
+    background: url('../images/icons/user_nome.png');
     background-position: 50% 80%;
     background-size: 75px;
     background-repeat: no-repeat;
@@ -361,3 +361,4 @@ header{
    }
 
 }
+

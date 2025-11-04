@@ -9,7 +9,7 @@
             <div class="bloco_esquerdo_imagem">
 
                 <figure class="imagem_personal_chefe">
-                    <img src="../public/img/personal_chefe.png" alt="Imagem da Glaucia Personal Chefe">
+                    <img src="../public/images/pg_home_images/personal_chefe.png" alt="Imagem da Glaucia Personal Chefe">
                 </figure>
 
             </div>

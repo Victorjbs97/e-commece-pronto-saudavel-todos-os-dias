@@ -1,5 +1,5 @@
 .sessao_avaliacoes{
-    background-color: #A9BCC3;
+    background-color: #12602C;
     padding: 40px 0;
     text-align: center;
 }
@@ -7,9 +7,6 @@
     color: white;
     margin-bottom: 20px;
     font-size: 2em;
-}
-.artigo_avaliacao{
-    background-color: white;
 }
 .carrossel{
     display: flex;
@@ -32,12 +29,15 @@
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1);
-    text-align: center;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    min-height: 150px; /* Altura mínima para demonstração */
     /* Configuração padrão para desktop: 3 cards visíveis */
-    flex: 0 0 calc(30% - 20px); /* 33.333% da largura - margem */
+    flex: 0 0 calc(33.666% - 20px); /* 33.333% da largura - margem */
     margin-right: 20px; /* Espaçamento entre os cards */
-    min-height: 100px; /* Altura mínima para demonstração */
 }
 .artigo_avaliacao:last-child {
     margin-right: 0; /* Remove a margem do último card para evitar barra de rolagem desnecessária */
@@ -45,7 +45,7 @@
 .btn_voltar, .btn_avancar{
     background: none;
     border: none;
-    color: rgb(61, 61, 61);
+    color: rgb(255, 255, 255);
     font-size: 2em;
     padding: 0 10px;
     position: absolute;

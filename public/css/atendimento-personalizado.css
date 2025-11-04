@@ -1,0 +1,73 @@
+.sessao_atendimento{
+    background-color: #a9bcc3b4;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.texto_atendimento {
+    flex-grow: 4;
+    max-width: 70%;
+}
+
+.texto_atendimento h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.texto_atendimento p{
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+
+}
+
+.pedidos_whatsapp strong {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.btn_whatapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px rgba(90, 243, 59, 0.4);
+    position: relative;
+    margin-left: 50px;
+}
+
+.btn_whatapp:hover{
+    background-color: #22c75e;
+}
+
+
+/* Media Query para telas menores (para responsividade) */
+@media (max-width: 768px) {
+    .sessao_atendimento {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .texto_atendimento {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .div_btn_whatsapp {
+        margin-top: 0; /* Remove a margem superior em telas pequenas */
+        align-self: flex-start; /* Alinha o botão à esquerda em telas pequenas */
+    }
+}
