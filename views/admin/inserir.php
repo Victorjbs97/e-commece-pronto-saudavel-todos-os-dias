@@ -7,8 +7,7 @@
    //verificaAdmin();
     $erro = null;
 
-    $mensagem = '';
-    $sucesso = false;
+
 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
             $nome = trim($_POST['nome']??'');
@@ -17,13 +16,11 @@
             $estoque = filter_input(INPUT_POST, 'estoque',FILTER_VALIDATE_INT);
             $imagem_url = trim($_POST['imagem_url']??'');
     
-            $resultado = cadastrarProduto($conexao,$nome,$descricao,$valor,$estoque,$imagem_url);
+            cadastrarProduto($conexao,$nome,$descricao,$valor,$estoque,$imagem_url);
 
-            if($resultado ===true){
-                $mensagem= "Produto **{$nome}** cadatrado com sucesso!";
-                $sucesso =  true;
-            }
-
+            header("location:listarProdutos.php");
+            exit();
+            
 
     }
 
@@ -38,9 +35,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php if ($mensagem): ?>
-        <p style="color: <?= $sucesso ? 'green' : 'red'; ?>; font-weight: bold;"><?= $mensagem; ?></p>
-    <?php endif; ?>
     <form action="" method="post">
         <div>
             <label for="nome">Nome:</label>
