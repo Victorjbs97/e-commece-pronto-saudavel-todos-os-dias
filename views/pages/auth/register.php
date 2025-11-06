@@ -63,6 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
   <div class="container">
+    
+    <div class="topo">
+      <a href="login.php" class="bt-a" >↩</a>
+    </div>
+
     <h2>Cadastro de Usuário</h2>
 
     <?= $mensagem ?>
@@ -81,7 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <input type="text" name="telefone" value="<?= htmlspecialchars($telefone) ?>">
 
       <button type="submit">Cadastrar</button>
-      <a href="login.php">login</a>
+      
+      <a href="login.php" class="bt-b" >Login</a>
+      
+
     </form>
   </div>
 </body>
