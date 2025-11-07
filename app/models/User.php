@@ -87,4 +87,6 @@ function realizarLogin($conexao,$email,$senha){
     }
 
 }
+
+
 ?>

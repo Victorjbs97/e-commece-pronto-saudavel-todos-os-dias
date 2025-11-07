@@ -33,3 +33,16 @@ function logout() {
     header("Location: login.php");
     exit;
 }
+
+function verificaAdmin() {
+    verificaLogin(); // Primeiro, verifica se o usuário está logado
+    
+    // Verifica o nível de acesso (ajuste TIPO_ADMIN se necessário)
+    if ($_SESSION["user_tipo"] !== "admin") {
+        // Redireciona para uma página de erro ou a página inicial
+        header("Location: logado.php"); // Ou 'acesso_negado.php'
+        exit;
+    }
+}
+
+

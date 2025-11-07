@@ -1,0 +1,364 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+
+    --cor-primaria: #1c6133 ;
+    --text: 'Inter', sans-serif;
+
+}
+
+header{
+
+    position: fixed;  /* fixa no topo */
+    top: 0;           /* posição no topo da página */
+    left: 0;
+    width: 100%;      /* ocupa toda a largura */
+    z-index: 1000;    /* garante que fique acima do restante da página */
+    background-color: #fff;  /* importante para não ficar transparente sobre conteúdo */
+
+}
+
+#desktop {
+
+    width: 100%;
+    
+    background-color: var(--cor-primaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#mobile {
+
+    width: 100%;
+    
+    background-color: var(--cor-primaria);
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#menu{
+
+    width: 100%;
+
+    background-image: url('../images/header_images/fundo_legumes.png');
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#logo_busca{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+    
+
+}
+
+#logo{
+
+    background-image: url('../images/header_images/logo.png');
+
+    background-size: cover;
+
+    height: 70px;
+    width: 70px;
+    margin-left: 10px;
+
+}
+
+#busca{
+
+    position: relative;
+    width: 40vw;
+
+}
+
+#busca input{
+
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px 35px 8px 10px;
+
+}
+
+::placeholder{
+
+    font-family: 'Inter', sans-serif;
+    font-size: large;
+    opacity: 0.5;
+
+}
+
+#icons{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+#lista_icons{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1vw;
+}
+
+#lista_icons li{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+        width: 5rem;
+    height: 5rem;
+
+}
+
+#lista_icons img{
+
+    height: 2.8rem;
+    width: auto;
+
+}
+
+#chefinho{
+
+    background: url('../images//icons/chefe.png');
+    background-position: 50% 50%;
+    background-size: 79px;
+    background-repeat: no-repeat;
+    
+    width: 5rem;
+    height: 5rem;
+
+}
+
+:hover#chefinho{
+
+    background: url('../images/icons/chefe_nome.png');
+    background-position: 50% 80%;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+#entrega{
+
+    background: url('../images/icons/entrega.png');
+    background-position: 50% 50%;
+    background-size: 75px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+:hover#entrega{
+
+    background: url('../images/icons/entrega_nome.png');
+    background-position: 50% 80%;
+    background-size: 75px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+#compras{
+
+    background: url('../images/icons/carrinho_vazio.png');
+    background-position: 50% 55%;
+    background-size: 73px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+:hover#compras{
+
+    background: url('../images/icons/carrinho_vazio_nome.png');
+    background-position: 50% 85%;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+#usuario{
+
+    background: url('../images/icons/user.png');
+    background-position: 50% 50%;
+    background-size: 79px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+:hover#usuario{
+
+    background: url('../images/icons/user_nome.png');
+    background-position: 50% 80%;
+    background-size: 75px;
+    background-repeat: no-repeat;
+    
+    height: 100px;
+    width: 100px;
+
+}
+
+
+#nav{
+
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.90);
+
+    background-color: white;
+    width: 100%;
+    height: 30px;
+    
+}
+
+#lista_nav{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;           
+
+    gap: 6vw;
+    list-style: none;
+
+    font-family: var(--text);
+    font-size: large;
+    font-weight: 600;
+    
+}
+
+#lista_nav a {
+
+    text-decoration: none;
+    font-family: var(--text);
+    color: black;
+    
+}
+
+/* Menu Hamburguer */
+
+#hamburguer{
+
+    margin-right: 1vw;
+
+}
+
+#offcanvasRight{
+
+    background: white;
+    width: 80%;
+    transition: 0.2s;        
+
+}
+
+.hamburger-btn {
+
+  background: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;/* remove contorno do foco */
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+/* SVG dentro do botão */
+.hamburger-btn svg path {
+  
+    fill: var(--cor-primaria);
+    transition: none;
+
+}
+
+.lista_hamburguer {
+
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+
+}
+
+.lista_hamburguer a {
+
+    text-decoration: none;
+    font-family: var(--text);
+    color: black;
+    
+}
+
+@media (max-width: 770px) {
+
+   #desktop {
+
+    display: none;
+
+   } 
+
+   #mobile {
+
+    display: flex;
+
+   }
+
+   #logo{
+
+    height: 50px;
+    width: 50px;
+
+    margin: 1vh;
+
+   }
+
+   #busca{
+
+    width: 64vw;
+
+   }
+
+}
+

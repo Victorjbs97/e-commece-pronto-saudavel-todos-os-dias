@@ -1,0 +1,153 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    overflow-x: hidden;  /* evita rolagem lateral */
+    overflow-y: auto;  /* permite rolar verticalmente */
+}
+
+/* CONTAINER PRINCIPAL ( fullscreen-section ) */
+.fullscreen-section {
+    
+    width: 100%;
+    
+    display: flex;  
+    justify-content: center;
+    align-items: center;       
+    flex-direction: column; 
+    
+    font-family: Arial, sans-serif;
+    padding: 8px;         
+    box-sizing: border-box; 
+    background-color: #f7f7f7; 
+}
+
+/* TÍTULOS E ESPAÇAMENTO */
+.titulo_sessao {
+    text-align: center;
+    margin: 5px 0 10px 0;   
+    font-size: 1.5em;      
+    flex-shrink: 0;        /* Garante que o título principal nunca seja encolhido */
+}
+
+.titulo_mapa, .titulo_fachada {
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1em;
+    flex-shrink: 0;        
+    color: #333;
+}
+
+/* CONTEÚDO ENVOLTO ( content-wrapper ) */
+.content-wrapper {
+    display: flex;      
+    flex-direction: column; /* Empilha em mobile */
+    flex-grow: 1;           /* ESSENCIAL: Ocupa todo o espaço vertical restante */
+    gap: 10px;              
+    width: 70%;
+    box-sizing: border-box;
+}
+
+/* CONTÊINERES INDIVIDUAIS ( mapa-container, image-container ) */
+.mapa-container,
+.image-container {
+    flex-grow: 1;           /* Ocupa o espaço vertical restante no content-wrapper */
+    flex-basis: 0;                
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    display: flex;          /* Para organizar título e conteúdo interno */
+    flex-direction: column; 
+    background-color: #fff;
+}
+
+/* ESTILOS PARA O CONTEÚDO ( Iframe, Imagem e Endereço ) */
+
+/* Estilos para o Iframe/Imagem principal (Ocupa o espaço restante) */
+.mapa-iframe,
+.image-container img {
+    flex-grow: 1;
+    width: 100%;
+    height: auto;           
+    object-fit: cover;      
+    border: none;
+    display: block;
+   
+}
+
+/* Estilo para a informação de endereço (localizada no final da seção) */
+.endereco-info {
+    flex-shrink: 0;          /* Não deve ser encolhido */
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px; /* Pequena margem para separar do content-wrapper */
+    font-size: 0.8em;        
+}
+
+.endereco-info a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+/* MEDIA QUERY para telas de DESKTOP / TABLET (>= 768px) */
+
+@media (min-width: 768px) {
+    .fullscreen-section {
+        padding: 20px;
+    }
+    
+    .titulo_sessao {
+        font-size: 2em;
+    }
+    
+    .content-wrapper {
+        flex-direction: row; /* Coloca Mapa e Imagem lado a lado */
+        gap: 20px;
+    }
+    
+    .mapa-container,
+    .image-container {
+        flex-basis: 50%; /* Ocupa 50% do espaço horizontal */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* MEDIA QUERY 2: Telas pequenas */
+@media (max-width: 480px) {
+    .titulo_sessao {
+        font-size: 1.3em;
+    }
+
+    .titulo_mapa, .titulo_fachada {
+        font-size: 0.9em;
+    }
+
+    .mapa-container,
+    .image-container {
+        flex-basis: auto;
+        height: 250px; /* dá uma altura fixa agradável */
+    }
+
+    .mapa-iframe,
+    .image-container img {
+        height: 100%;
+        object-position: center center; /* garante foco central */
+    }
+
+    .endereco-info {
+        font-size: 0.75em;
+        padding: 8px;
+    }
+}

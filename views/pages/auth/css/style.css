@@ -1,3 +1,10 @@
+:root {
+
+  --cor-principal: #12602c;
+  --fonte-padrao: "Inter", "Segoe UI", Arial, sans-serif;
+
+}
+
 /* ======== RESET & BASE ======== */
 * {
   box-sizing: border-box;
@@ -7,7 +14,7 @@
 
 body {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+  background: var(--cor-principal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,27 +23,71 @@ body {
   color: #333;
 }
 
+/* Foto de fundo do Body */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%; /* um pouco maior pra cobrir bordas após girar */
+  height: 100%;
+  background-image: url(../../../../public/images/header_images/fundo_legumes.png);
+  z-index: -1; /* mantém a imagem atrás do conteúdo */
+  opacity: 0.4; /* opcional, se quiser suavizar */
+}
+
 /* ======== CONTAINER ======== */
 .container {
   background: #fff;
-  padding: 40px 35px;
+  
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 10px 8px 25px rgba(0, 0, 0, 0.40);
   width: 100%;
   max-width: 400px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: start;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
-.container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+.topo {
+
+  width: 100%;
+  display: flex;
+  justify-content: right;
+
+}
+
+.bt-a {
+
+  background: var(--cor-principal);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-size: var(--fonte-padrao);
+
+
+  text-decoration: none;
+  text-align: center;
+
+}
+
+.bt-a:hover {
+
+  background-color: white;
+  color: var(--cor-principal);
+  box-shadow: 0px 0px 4px var(--cor-principal);
+
 }
 
 h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #1976d2;
+  color: var(--cor-principal);
   font-size: 1.6rem;
   letter-spacing: 0.5px;
 }
@@ -63,7 +114,7 @@ h2 {
 }
 
 .form-cadastro input:focus {
-  border-color: #1976d2;
+  border-color: var(--cor-principal);
   box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
   outline: none;
 }
@@ -80,14 +131,24 @@ h2 {
 }
 
 .form-login input:focus {
-  border-color: #1976d2;
+  border-color: var(--cor-principal);
   box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
   outline: none;
 }
 
 /* ======== BOTÃO ======== */
+
+.dosBotoes {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+
 button {
-  background: #1976d2;
+  background: var(--cor-principal);
   color: #fff;
   padding: 12px;
   border: none;
@@ -95,25 +156,43 @@ button {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
-  margin-top: 5px;
+  font-size: var(--fonte-padrao);
+
+}
+
+.bt-b {
+
+  background: var(--cor-principal);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-size: var(--fonte-padrao);
+
+
+  text-decoration: none;
+  text-align: center;
+
+}
+
+.bt-b:hover {
+
+  background-color: white;
+  color: var(--cor-principal);
+  box-shadow: 0px 0px 4px var(--cor-principal);
+
 }
 
 button:hover {
-  background: #0d47a1;
-  transform: translateY(-1px);
-}
 
-button:active {
-  transform: scale(0.98);
+  background: white;
+  color: var(--cor-principal);
+  box-shadow: 0px 0px 4px var(--cor-principal);
+  
 }
-
-button:focus {
-  background: #0d47a1;
-  outline: 3px solid rgba(25, 118, 210, 0.5);
-  outline-offset: 2px;
-}
-
 
 /* ======== MENSAGENS ======== */
 .mensagem {
@@ -138,17 +217,8 @@ button:focus {
 }
 
 /* ======== RESPONSIVO ======== */
+
 @media (max-width: 450px) {
-  .container {
-    padding: 30px 25px;
-    width: 100%;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  button {
-    font-size: 0.95rem;
-  }
+  
+  
 }

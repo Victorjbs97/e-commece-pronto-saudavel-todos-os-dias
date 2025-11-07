@@ -1,18 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../views/partials/css/header.css">
-    <title>Pronto & Saudavel</title>
-</head>
-<body>
+<?php 
+session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-    <?php require_once "../views/partials/header.php"; ?>
+define('VIEWS_PATH', __DIR__ . '/../views');
+$baseUrl = 'http://localhost/e-commece-pronto-saudavel-todos-os-dias';
+
+
+$action = $_POST['action'] ?? null;
+
+if ($action === 'gerenciar_carrinho') {
     
-    <?php require_once "../views/partials/footer.php" ?>
+    require_once VIEWS_PATH . '/partials/gerenciar-carrinho.php';
+    exit; 
 
+} else {
+    // Decidir qual página carregar
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
+    $allowedPages = [
+        'home' => VIEWS_PATH . '/pages/home.php',
+        'produtos' => VIEWS_PATH . '/pages/produtos.php',
+        'carrinho_de_compras' => VIEWS_PATH . '/pages/carrinho_de_compras.php'
+        // Adicione as outras páginas aqui
+    
+    ];
 
-</body>
-</html>
+   
+    // Verificamos se a página pedida está na nossa lista.
+    if (array_key_exists($page, $allowedPages)) {
+        // Se estiver, definimos $viewFile como o caminho do arquivo.
+        $viewFile = $allowedPages[$page];
+    } else {
+        
+        $viewFile = $allowedPages['home']; 
+    }
+
+    // Carregar o "Molde" Principal
+    require_once VIEWS_PATH . '/layouts/main.php';
+}
+?>

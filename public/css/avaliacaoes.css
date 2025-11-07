@@ -1,0 +1,95 @@
+.sessao_avaliacoes{
+    background-color: #12602C;
+    padding: 40px 0;
+    text-align: center;
+    margin: 40px 0;
+}
+.sessao_avaliacoes h2{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.carrossel{
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.carrossel_avaliacoes{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+.artigo_avaliacao{
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    min-height: 150px; /* Altura mínima para demonstração */
+    /* Configuração padrão para desktop: 3 cards visíveis */
+    flex: 0 0 calc(33.666% - 20px); /* 33.333% da largura - margem */
+    margin-right: 20px; /* Espaçamento entre os cards */
+}
+.artigo_avaliacao:last-child {
+    margin-right: 0; /* Remove a margem do último card para evitar barra de rolagem desnecessária */
+}
+.btn_voltar, .btn_avancar{
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    padding: 0 10px;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.2s;
+
+}
+.btn_voltar{
+    left: 0;
+}
+.btn_avancar{
+    right: 0;
+}
+.btn_voltar, .btn_avancar:hover{
+    cursor: pointer;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 768px){
+
+    .carrossel{
+        padding: 0 50px;
+    }
+    .artigo_avaliacao{
+        flex: 0 0 calc(100% - 20px);
+    }
+
+    .btn_voltar{
+        left: 5px;
+        font-size: 1.5em;
+    }
+    .btn_avancar{
+        right: 5px;
+        font-size: 1.5em;
+    }
+
+    .artigo_avaliacao h2{
+        font-size: 1.5em;
+    }
+
+
+}
+
