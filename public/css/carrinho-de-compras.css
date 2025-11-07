@@ -1,0 +1,14 @@
+.sessao_carrinho_de_compras {
+
+    
+    padding-top: 130px; 
+    
+}
+
+
+@media (max-width: 768px) {
+    .sessao_carrinho_de_compras {
+     
+        padding-top: 90px;
+    }
+}

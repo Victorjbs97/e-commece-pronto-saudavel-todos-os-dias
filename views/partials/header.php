@@ -32,7 +32,7 @@
                 </li>
                 
                 <li>
-                    <a href=""> <div id="compras" ></div> </a>
+                    <a href="<?= $baseUrl ?>/public/index.php?page=carrinho_de_compras"> <div id="compras" ></div> </a>
                 </li>
 
                 <li>
