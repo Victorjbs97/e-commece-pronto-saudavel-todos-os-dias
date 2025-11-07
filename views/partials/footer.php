@@ -1,5 +1,4 @@
 <footer id="footer">
-<link rel="stylesheet" href="css/footer.css">
   <div class="bloco-footer"> 
       <h3>Contato</h3>
       <p>Cel: <a href="tel:+5511940367571">+55 11 94036-7571</a></p>
