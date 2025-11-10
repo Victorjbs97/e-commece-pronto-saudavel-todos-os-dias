@@ -60,26 +60,22 @@
     </div>
 
     <div class="product-card__actions">
-        <div class="quantity-selector">
+        <form action="<?= $baseUrl ?>/public/index.php" method="POST">
+            
+            <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
+            
+            <input type="hidden" name="action" value="gerenciar_carrinho">
+            
+            <div class="quantity-selector">
+                <button class="quantity-selector__button" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                <input class="quantity-selector__input" type="number" name="quantidade" value="1" min="1" class="input-quantidade">
+                <button class="quantity-selector__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+            </div>
 
-            <button class="quantity-selector__button">-</button>
-
-            <input class="quantity-selector__input" type="text" value="1" readonly>
-
-            <button class="quantity-selector__button">+</button>
-
-        </div>
-        <button class="button button--primary">
-
-            Adicionar
-
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-
-            </svg>
-
-        </button>
+            <button type="submit" class="button button--primary">Adicionar</button>
+            
+        </form>
     </div>
     
 </article>
+
