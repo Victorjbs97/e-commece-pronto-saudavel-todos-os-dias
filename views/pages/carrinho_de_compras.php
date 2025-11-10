@@ -1,57 +1,68 @@
 <?php
-
-require_once __DIR__ . '/../../app/core/DataBaseConecta.php'; 
+require_once __DIR__ . '/../../app/core/DataBaseConecta.php';
 global $baseUrl;
-
 
 $produtos_do_banco = [];
 $total_carrinho = 0.00;
 $carrinho_vazio = true;
 
-
 try {
     if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
-        
         $carrinho_vazio = false;
-        
         $ids_produtos = array_keys($_SESSION['carrinho']);
         $placeholders = implode(',', array_fill(0, count($ids_produtos), '?'));
-        
+
         $sql = "SELECT * FROM produtos WHERE id IN ($placeholders) AND ativo = 1";
         $stmt = $conexao->prepare($sql);
         $stmt->execute($ids_produtos);
-        
+
         $produtos_do_banco = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if (empty($produtos_do_banco)) {
             $carrinho_vazio = true;
-            echo "<p style='color:orange;'>Aviso: A sessão tem IDs, mas nenhum produto foi encontrado no banco com esses IDs (verifique se estão 'ativos').</p>";
+
+            /*
+            echo "<p style='color:orange;'>Aviso: IDs na sessão, mas nenhum produto ativo encontrado.</p>";
+            */
         }
-
-    } else {
-         echo "<p>Aviso: O PHP não encontrou dados na sessão 'carrinho'.</p>";
     }
-
 } catch (PDOException $e) {
-    echo "<p style='color:red; font-size: 1.2rem; border: 2px solid red; padding: 10px;'>";
-    echo "ERRO FATAL NA QUERY SQL: " . $e->getMessage();
-    echo "</p>";
+    echo "<p style='color:red;'>Erro SQL: " . $e->getMessage() . "</p>";
     die();
 }
 ?>
 
-
 <main>
-    <section class="sessao_carrinho_de_compras">
-        <h1>Carrinho de Compras</h1>
+
+    <section class="sessaoCarrinho">
 
         <?php if ($carrinho_vazio): ?>
-            <p>Seu carrinho de compras está vazio.</p>
-        
+
+            <div id="vazio">
+                <p>Você não possui compras no carrinho</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 24 24" fill="none" stroke="#979797ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 6h15l-1.5 9h-13z" />
+                    <circle cx="9" cy="20" r="1.5" />
+                    <circle cx="18" cy="20" r="1.5" />
+                    <path d="M6 6L4 2H1" />
+                    <path d="M15 4l4 4M19 4l-4 4" />
+                </svg>
+
+            </div>
+
         <?php else: ?>
-            <table>
-                <thead>
+
+            <div id="cheio">
+                <h1>Carrinho de Compras</h1>
+
+            </div>
+
+            <table id="tabelaDesktop" class="tab">
+
+                <thead id="tab_he">
                     <tr>
+                        <th>Excluir</th>
                         <th>Produto</th>
                         <th>Nome</th>
                         <th>Preço</th>
@@ -59,7 +70,71 @@ try {
                         <th>Subtotal</th>
                     </tr>
                 </thead>
-                <tbody>
+
+                <tbody id="tab_bo">
+                    <?php foreach ($produtos_do_banco as $produto): ?>
+                        <?php
+                        $quantidade = $_SESSION['carrinho'][$produto['id']];
+                        $preco = (float)($produto['valor'] ?? 0);
+                        $subtotal = $preco * $quantidade;
+                        $total_carrinho += $subtotal;
+                        $imagem_url = (!empty($produto['imagem_url']))
+                            ? $baseUrl . $produto['imagem_url']
+                            : $baseUrl . '/public/images/sem-imagem.png';
+                        ?>
+                        <tr>
+
+                            <td id="lixeira">
+                                <form action="<?= $baseUrl ?>/public/index.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="action" value="gerenciar_carrinho">
+                                    <input type="hidden" name="acao_carrinho" value="deletar">
+                                    <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
+                                    <button type="submit" class="botao-deletar"></button>
+                                </form>
+                            </td>
+
+                            <td id="imagem">
+                                <img src="<?= htmlspecialchars($imagem_url) ?>" alt="<?= htmlspecialchars($produto['nome']) ?>" width="50">
+                            </td>
+
+                            <td id="produto"><?= htmlspecialchars($produto['nome']) ?></td>
+
+                            <td id="preco">R$ <?= number_format($preco, 2, ',', '.') ?></td>
+
+                            <td id="contadorProduto">
+                                <form action="<?= $baseUrl ?>/public/index.php" method="POST" class="form-carrinho">
+                                    <input type="hidden" name="action" value="gerenciar_carrinho">
+                                    <input type="hidden" name="acao_carrinho" value="atualizar">
+                                    <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
+
+                                    <div class="quantidade-container">
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, -1)">−</button>
+
+                                        <input
+                                            id="qtd"
+                                            type="number"
+                                            name="quantidade"
+                                            value="<?= $quantidade ?>"
+                                            min="1"
+                                            class="input-quantidade"
+                                            readonly>
+
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                </form>
+                            </td>
+
+                            <td id="valorQtd">R$ <?= number_format($subtotal, 2, ',', '.') ?></td>
+
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+
+            </table>
+
+            <section id="tabelaMobile" class="tab">
+
+                <article id="tab_bo">
 
                     <?php foreach ($produtos_do_banco as $produto): ?>
                         <?php
@@ -67,44 +142,97 @@ try {
                         $preco = (float)($produto['valor'] ?? 0);
                         $subtotal = $preco * $quantidade;
                         $total_carrinho += $subtotal;
-                        $imagem_url = (!empty($produto['imagem_url'])) 
+                        $imagem_url = (!empty($produto['imagem_url']))
                             ? $baseUrl . $produto['imagem_url']
                             : $baseUrl . '/public/images/sem-imagem.png';
                         ?>
-                        <tr>
-                            <td>
+
+                        <div id="sessaoMobile">
+                            <div id="topoMobile">
+
+                                <img src="<?= htmlspecialchars($imagem_url) ?>" alt="<?= htmlspecialchars($produto['nome']) ?>" width="50">
+
+                                <div id="infoMobile">
+                                    <p><?= htmlspecialchars($produto['nome']) ?></p>
+
+                                    <p>R$ <?= number_format($preco, 2, ',', '.') ?></p>
+
+                                </div>
+
+                            </div>
+
+                            <div id="meioMobile">
+
                                 <form action="<?= $baseUrl ?>/public/index.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="action" value="gerenciar_carrinho">
                                     <input type="hidden" name="acao_carrinho" value="deletar">
                                     <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
-                                    <button type="submit" class="botao-deletar">X</button>
+                                    <button type="submit" class="botao-deletar"></button>
                                 </form>
-                                <img src="<?= htmlspecialchars($imagem_url) ?>" alt="<?= htmlspecialchars($produto['nome']) ?>" width="50">
-                            </td>
-                            <td><?= htmlspecialchars($produto['nome']) ?></td>
-                            <td>R$ <?= number_format($preco, 2, ',', '.') ?></td>
-                            <td>
-                                <form action="<?= $baseUrl ?>/public/index.php" method="POST">
+
+
+                                <form action="<?= $baseUrl ?>/public/index.php" method="POST" class="form-carrinho">
                                     <input type="hidden" name="action" value="gerenciar_carrinho">
                                     <input type="hidden" name="acao_carrinho" value="atualizar">
                                     <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
-                                    <input type="number" name="quantidade" value="<?= $quantidade ?>" min="0" class="input-quantidade">
-                                    <button type="submit">Atualizar</button>
-                                </form>
-                            </td>
-                            <td>R$ <?= number_format($subtotal, 2, ',', '.') ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
 
-            <div class="total-carrinho">
-                <h3>Total: R$ <?= number_format($total_carrinho, 2, ',', '.') ?></h3>
-                <form action="/caminho-para-gateway.php" method="POST">
-                    <button type="submit" class="botao-pagamento">Pagamento</button>
+                                    <div class="quantidade-container">
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, -1)">−</button>
+
+                                        <input
+                                            id="qtd"
+                                            type="number"
+                                            name="quantidade"
+                                            value="<?= $quantidade ?>"
+                                            min="1"
+                                            class="input-quantidade"
+                                            readonly>
+
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                </form>
+
+                                <p>R$ <?= number_format($subtotal, 2, ',', '.') ?></p>
+
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+                </article>
+
+            </section>
+
+            <div id="total-carrinho">
+
+                <form id="butaos" action="/caminho-para-gateway.php" method="POST">
+
+                    <div id="botao-pagamento"><a href="http://localhost/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos">Adicionar +</a></div>
+
+                    <button type="submit" class="botao-pagamento">Finalizar</button>
+
                 </form>
+
+                <h3>Total: R$ <?= number_format($total_carrinho, 2, ',', '.') ?></h3>
+
             </div>
 
         <?php endif; ?>
+
     </section>
+
+    <script>
+        // Atualiza automaticamente ao clicar em + ou −
+        function alterarQuantidade(botao, delta) {
+            const form = botao.closest('form');
+            const input = form.querySelector('.input-quantidade');
+            let valor = parseInt(input.value) || 0;
+            valor += delta;
+            if (valor < 1) valor = 1;
+            input.value = valor;
+
+            // envia o formulário automaticamente
+            form.submit();
+        }
+    </script>
+
 </main>
