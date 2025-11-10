@@ -20,10 +20,12 @@ try {
 
         if (empty($produtos_do_banco)) {
             $carrinho_vazio = true;
-            echo "<p style='color:orange;'>Aviso: IDs na sessão, mas nenhum produto ativo encontrado.</p>";
-        }
 
-    } 
+            /*
+            echo "<p style='color:orange;'>Aviso: IDs na sessão, mas nenhum produto ativo encontrado.</p>";
+            */
+        }
+    }
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Erro SQL: " . $e->getMessage() . "</p>";
     die();
@@ -56,7 +58,7 @@ try {
 
             </div>
 
-            <table id="tab">
+            <table id="tabelaDesktop" class="tab">
 
                 <thead id="tab_he">
                     <tr>
@@ -130,13 +132,83 @@ try {
 
             </table>
 
+            <section id="tabelaMobile" class="tab">
+
+                <article id="tab_bo">
+
+                    <?php foreach ($produtos_do_banco as $produto): ?>
+                        <?php
+                        $quantidade = $_SESSION['carrinho'][$produto['id']];
+                        $preco = (float)($produto['valor'] ?? 0);
+                        $subtotal = $preco * $quantidade;
+                        $total_carrinho += $subtotal;
+                        $imagem_url = (!empty($produto['imagem_url']))
+                            ? $baseUrl . $produto['imagem_url']
+                            : $baseUrl . '/public/images/sem-imagem.png';
+                        ?>
+
+                        <div id="sessaoMobile">
+                            <div id="topoMobile">
+
+                                <img src="<?= htmlspecialchars($imagem_url) ?>" alt="<?= htmlspecialchars($produto['nome']) ?>" width="50">
+
+                                <div id="infoMobile">
+                                    <p><?= htmlspecialchars($produto['nome']) ?></p>
+
+                                    <p>R$ <?= number_format($preco, 2, ',', '.') ?></p>
+
+                                </div>
+
+                            </div>
+
+                            <div id="meioMobile">
+
+                                <form action="<?= $baseUrl ?>/public/index.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="action" value="gerenciar_carrinho">
+                                    <input type="hidden" name="acao_carrinho" value="deletar">
+                                    <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
+                                    <button type="submit" class="botao-deletar"></button>
+                                </form>
+
+
+                                <form action="<?= $baseUrl ?>/public/index.php" method="POST" class="form-carrinho">
+                                    <input type="hidden" name="action" value="gerenciar_carrinho">
+                                    <input type="hidden" name="acao_carrinho" value="atualizar">
+                                    <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
+
+                                    <div class="quantidade-container">
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, -1)">−</button>
+
+                                        <input
+                                            id="qtd"
+                                            type="number"
+                                            name="quantidade"
+                                            value="<?= $quantidade ?>"
+                                            min="1"
+                                            class="input-quantidade"
+                                            readonly>
+
+                                        <button type="button" class="btn-quantidade" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                </form>
+
+                                <p>R$ <?= number_format($subtotal, 2, ',', '.') ?></p>
+
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+                </article>
+
+            </section>
+
             <div id="total-carrinho">
 
                 <form id="butaos" action="/caminho-para-gateway.php" method="POST">
 
-                    <div id="botao-pagamento"><a href="http://localhost/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos">+</a></div>
+                    <div id="botao-pagamento"><a href="http://localhost/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos">Comprar +</a></div>
 
-                    <button type="submit" class="botao-pagamento">Finalizar Compra</button>
+                    <button type="submit" class="botao-pagamento">Pagar</button>
 
                 </form>
 

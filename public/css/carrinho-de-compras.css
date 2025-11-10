@@ -31,7 +31,13 @@
 
 }
 
-#tab {
+#tabelaMobile {
+
+    display: none;
+
+}
+
+.tab {
 
     width: 100%;
     border-collapse: collapse;
@@ -40,14 +46,14 @@
 
 }
 
-#tab thead {
+.tab thead {
     position: sticky;
     /* faz o header grudar */
     top: 0;
     z-index: 5;
 }
 
-#tab thead th {
+.tab thead th {
     text-align: left;
     padding: 12px 16px;
     font-weight: 600;
@@ -55,26 +61,26 @@
     font-size: 15px;
 }
 
-#tab tbody tr {
+.tab tbody tr {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
     margin-bottom: 10px;
 }
 
-#tab td {
+.tab td {
     padding: 12px 16px;
     vertical-align: middle;
     color: #333;
 }
 
-#tab td:first-child {
+.tab td:first-child {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#tab img {
+.tab img {
     width: 55px;
     height: 55px;
     object-fit: cover;
@@ -136,6 +142,7 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px;
 
 }
@@ -198,4 +205,111 @@
 
 .botao-pagamento:hover {
     background-color: #13461e;
+}
+
+#topoMobile {
+
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px;
+
+}
+
+#infoMobile {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#infoMobile p {
+
+    margin: 0;
+    padding: 0;
+
+    font-weight: 600;
+
+}
+
+#meioMobile {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#meioMobile p {
+
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+
+}
+
+@media (max-width: 650px) {
+
+    #tabelaDesktop { display: none; }
+    #tabelaMobile { display: flex; }
+    #vazio { padding-top: 0px; }
+    #cheio { padding-top: 0px; }
+
+    .sessaoCarrinho {
+
+        padding-top: 0px;
+        min-height: 100vh;
+        overflow-x: auto;
+
+    }
+
+    #total-carrinho h3 {
+    
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+        border: 1px solid #333;
+        padding: 5px;
+        border-radius: 6px;
+
+    }
+
+    #botao-pagamento a {
+
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 6px;
+        border-radius: 6px;
+        font-weight: 600;
+        
+        transition: background-color 0.3s;
+
+        text-decoration: none;
+        color: white;
+        
+    }
+
+    .botao-pagamento {
+
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    }
+
+    #sessaoMobile {
+
+        border: solid 1px #9c9c9c;
+        margin-bottom: 5px;
+
+    }
+
 }

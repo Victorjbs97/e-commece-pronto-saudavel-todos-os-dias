@@ -111,11 +111,11 @@
                     <hr>
                     <ul class="lista_hamburguer">
 
-                        <li><a href="">Inicio</a></li>
+                        <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
                         <li><a href="">Personal Chefe</a></li>
                         <li><a href="">Entregas</a></li>
                         <li><a href="">Carrinho de Compras</a></li>
-                        <li><a href="">Marmitas</a></li>
+                        <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
                         <li><a href="">Outros Produtos</a></li>
                         <li><a href="">Quem Somos</a></li>
 
