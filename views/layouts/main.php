@@ -31,6 +31,7 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/header.css">
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/dialog_login.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/footer.css">
 </head>
 <body>
     
