@@ -206,9 +206,9 @@ try {
 
                 <form id="butaos" action="/caminho-para-gateway.php" method="POST">
 
-                    <div id="botao-pagamento"><a href="http://localhost/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos">Comprar +</a></div>
+                    <div id="botao-pagamento"><a href="http://localhost/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos">Adicionar +</a></div>
 
-                    <button type="submit" class="botao-pagamento">Pagar</button>
+                    <button type="submit" class="botao-pagamento">Finalizar</button>
 
                 </form>
 
