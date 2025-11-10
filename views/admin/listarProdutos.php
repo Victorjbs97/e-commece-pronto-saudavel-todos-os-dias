@@ -50,13 +50,14 @@ $produtos = listarProdutos($conexao);
                         ?>
                     </td>
                     <td>
-                        <a href="editar.php?id=<?= $produto['id']; ?>">Editar</a> | 
-                        <a href="excluir.php?id=<?= $produto['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+                        <a href="atualizarProdutos.php?id=<?= $produto['id']; ?>">Editar</a> | 
+                        <a href="excluirProdutos.php?id=<?= $produto['id']; ?>" class="excluir">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     
+    <script src="../admin/js/confirmar_exclusao.js"></script>
 </body>
 </html>
