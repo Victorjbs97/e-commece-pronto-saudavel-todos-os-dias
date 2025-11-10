@@ -1,9 +1,9 @@
 <?php
 function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem){
-    if(empty($nome) || empty($preco)){
+    if(empty($nome) || empty($valor)){
         return "Nome e Preço são obrigatórios.";
     }
-    if(!is_numeric($preco)||$preco<=0){
+    if(!is_numeric($valor)||$valor<=0){
         return "Preço deve ser um valor numérico positivo.";
     }
     if (!is_numeric($estoque)||$estoque<=0){
@@ -24,5 +24,15 @@ function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem)
     }catch(PDOException $e){
         return "Erro ao cadastra produto.";
     }
+}
+
+function listarProdutos($conexao) {
+    $sql = "SELECT * FROM produtos ORDER BY nome";
+
+    /* Rxecutamos o comando e guardamos o resultado da consulta  */
+    $consulta = $conexao -> query($sql);
+
+    /* Retornamos o resultado em forma de array associativo */
+    return $consulta->fetchAll();
 }
 ?>
