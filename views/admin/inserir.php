@@ -55,7 +55,7 @@
 
         <div>
             <label for="imagem_url">Imagem caminho:</label>
-            <input type="text" name="imagem_url" id="imagem_url">
+            <input type="file" name="imagem_url" id="imagem_url">
         </div>
 
 
