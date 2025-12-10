@@ -5,12 +5,12 @@
 
 <article class="product-card">
 
-    <a href="<?= BASE_URL ?>/index.php?page=productDetails&id=<?= $produto['id'] ?>">
+    <a href="<?= $baseUrl ?>/index.php?page=productDetails&id=<?= $produto['id'] ?>">
         
         <figure class="product-card__figure">
             <img 
                 class="product-card__image"
-                src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
+                src="<?=htmlspecialchars($produto['imagem_url']) ?>" 
                 alt="<?= htmlspecialchars($produto['nome']) ?>">
         </figure>
 
@@ -59,7 +59,7 @@
 
     <div class="product-card__actions" data-preco-unitario="<?= $produto['preco'] ?>">
         
-        <form action="<?= BASE_URL ?>/index.php?page=carrinho_de_compras" method="POST">
+        <form action="<?= $baseUrl ?>/public/index.php" method="POST">
 
             <input type="hidden" name="action" value="gerenciar_carrinho">
             <input type="hidden" name="acao_carrinho" value="adicionar">

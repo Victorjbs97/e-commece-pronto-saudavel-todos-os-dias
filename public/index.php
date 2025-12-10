@@ -37,6 +37,8 @@ if (!defined('BASE_URL')) {
     define('BASE_URL', 'http://localhost/e-commece-pronto-saudavel-todos-os-dias');
 }
 
+$baseUrl = BASE_URL;
+
 // Dados do usuário logado
 $usuario_logado = isset($_SESSION['user_nome']);
 $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';

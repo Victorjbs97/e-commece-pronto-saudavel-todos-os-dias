@@ -12,8 +12,8 @@
         $email = trim($_POST["email"] ?? '');
         $senha = trim($_POST["senha"] ?? '');
         if (empty($email) || empty($senha)) {
-            echo "<script>alert('Por favor, preencha todos os campos: e-mail e senha!'); window.history.back();</script>";
-            exit;
+            //echo "<script>alert('Por favor, preencha todos os campos: e-mail e senha!'); window.history.back();</script>";
+            $erro= 'Preencha todos os campos: e-mail e senha!';
         } else {
             $podeLogar = realizarLogin($conexao, $email, $senha);
             if ($podeLogar === true) {

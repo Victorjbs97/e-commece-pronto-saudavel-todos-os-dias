@@ -1,11 +1,21 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    
-    # BLOQUEIO DE SEGURANÇA:
-    # Proíbe o acesso direto via navegador às pastas de lógica e visualização.
-    # O usuário só consegue acessar o que está na pasta 'public' (CSS, JS, Imagens, index.php).
+
+    ######################################################################
+    # LIBERAR TOTALMENTE A API
+    # Isso permite que qualquer arquivo dentro de /public/api funcione
+    ######################################################################
+    RewriteRule ^public/api/ - [L]
+
+    ######################################################################
+    # BLOQUEIOS DE SEGURANÇA
+    # Essas pastas não podem ser acessadas direto pelo navegador
+    ######################################################################
     RewriteRule ^(app|config|views|vendor) - [F,L]
-    
-    # Impede que o servidor mostre a lista de arquivos se alguém acessar uma pasta sem index
+
+    ######################################################################
+    # Impede listagem de arquivos
+    ######################################################################
     Options -Indexes
 </IfModule>
+ 

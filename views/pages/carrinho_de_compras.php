@@ -70,14 +70,16 @@ foreach ($produtos_do_banco as $p) {
     if ($preco < 0) $preco = 0;
 
     $items_checkout[] = [
+        "id"          => $p['id'],   
         "name"        => $p['nome'],
         "quantity"    => intval($quantidade),
         "unit_amount" => intval(round($preco * 100))
     ];
+    
 }
 
 /* ==================================================
-   ✅ AQUI ESTÁ A CORREÇÃO QUE RESOLVE SEU PROBLEMA
+   USUÁRIO LOGADO
 ================================================== */
 
 $usuario = null;
@@ -229,25 +231,15 @@ if (
 
                     <?php if (!$carrinho_vazio && $usuario): ?>
 
+                        <!-- CORRIGIDO AQUI -->
                         <form id="botao-pagamento"
                               method="post"
-                              action="<?= htmlspecialchars($baseUrl) ?>/config/pagseguro_create_checkout.php">
+                              action="<?= htmlspecialchars($baseUrl) ?>/public/api/checkout.php">
 
-                            <input type="hidden"
-                                   name="nome"
-                                   value="<?= htmlspecialchars($usuario['nome']) ?>">
-
-                            <input type="hidden"
-                                   name="email"
-                                   value="<?= htmlspecialchars($usuario['email']) ?>">
-
-                            <input type="hidden"
-                                   name="valor"
-                                   value="<?= number_format($total_carrinho, 2, '.', '') ?>">
-
-                            <input type="hidden"
-                                   name="items"
-                                   value="<?= htmlspecialchars(json_encode($items_checkout, JSON_UNESCAPED_UNICODE)) ?>">
+                            <input type="hidden" name="nome"  value="<?= htmlspecialchars($usuario['nome']) ?>">
+                            <input type="hidden" name="email" value="<?= htmlspecialchars($usuario['email']) ?>">
+                            <input type="hidden" name="valor" value="<?= number_format($total_carrinho, 2, '.', '') ?>">
+                            <input type="hidden" name="items" value="<?= htmlspecialchars(json_encode($items_checkout, JSON_UNESCAPED_UNICODE)) ?>">
 
                             <button type="submit" class="botao-pagamento">
                                 Finalizar compra
@@ -290,3 +282,4 @@ if (
     </script>
 
 </main>
+ 
