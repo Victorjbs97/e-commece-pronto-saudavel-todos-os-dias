@@ -94,6 +94,12 @@ textarea.form-control {
     object-fit: cover;
     border-radius: 4px;
 }
+.tabela-produtos img.miniatura:hover {
+    transform: scale(2);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 0 1px rgba(18, 96, 44, 0.2);
+
+}
 
 /* --- BOTOES --- */
 .botoes-acao {
