@@ -17,7 +17,12 @@
         <div class="opcoes-botoes">
             <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn-verde">Inicio</a>
             <a href="<?= BASE_URL ?>/public/index.php?page=painel_adm" class="btn-verde">Marmitas</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=editar_perfil" class="btn-verde">Editar Perfil</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=enderecos" class="btn-verde">Meus Endereços</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=novo_endereco" class="btn-verde">Novo Endereço</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=pedidos" class="btn-verde">Meus Pedidos</a>
         </div>
     </div>
 
 </div>
+

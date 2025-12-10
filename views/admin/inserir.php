@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $nome = trim(filter_var($_POST['nome'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS));
         $descricao = trim(filter_var($_POST['descricao'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS));
+        $keywords = trim(filter_var($_POST['keywords'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS));
         $valor = filter_input(INPUT_POST, 'valor', FILTER_VALIDATE_FLOAT);
         $estoque = filter_input(INPUT_POST, 'estoque', FILTER_VALIDATE_INT);
 
@@ -25,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // -----------------------
 
         // Agora passamos o $caminhoImagem (que é uma string) para a função
-        $resultado = cadastrarProduto($conexao, $nome, $descricao, $valor, $estoque, $caminhoImagem);
+        $resultado = cadastrarProduto($conexao, $nome, $descricao,$keywords ,$valor, $estoque, $caminhoImagem);
 
         // Se a função cadastrarProduto retornar uma string, é erro (conforme sua lógica original)
         if (is_string($resultado)) {
@@ -56,6 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <label for="descricao">Descrição</label>
                 <textarea name="descricao" id="descricao" rows="4" class="form-control" placeholder="Detalhes do prato..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="keywords">Keywords</label>
+                <textarea name="keywords" id="keywords" rows="4" class="form-control" placeholder="Keywords"></textarea>
             </div>
 
             <div class="form-group">

@@ -17,11 +17,12 @@ if (!$produto) {
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = trim($_POST['nome'] ?? '');
     $descricao = trim($_POST['descricao'] ?? '');
+    $keywords = trim($_POST['keywords'] ?? '');
     $valor = filter_input(INPUT_POST, 'valor', FILTER_VALIDATE_FLOAT);
     $estoque = filter_input(INPUT_POST, 'estoque', FILTER_VALIDATE_INT);
     $imagem_url = $_FILES['imagem_url'] ?? null;
 
-    $msg = atualizarProduto($conexao, $id, $nome, $descricao, $valor, $estoque, $imagem_url);
+    $msg = atualizarProduto($conexao, $id, $nome, $descricao,$keywords ,$valor, $estoque, $imagem_url);
 
     // Após atualizar, redireciona
     header("Location: " . BASE_URL . "/public/index.php?page=listar_produtos");
@@ -67,6 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
                 <textarea name="descricao" id="descricao" rows="4" class="form-control"><?= htmlspecialchars($produto['descricao']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="keywords">Keywords:</label>
+                <textarea name="keywords" id="keywords" rows="4" class="form-control"><?= htmlspecialchars($produto['keywords']); ?></textarea>
             </div>
 
             <div class="form-group">

@@ -1,5 +1,5 @@
 <?php
-    function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem){
+    function cadastrarProduto($conexao,$nome,$descricao,$valor,int $estoque,$imagem,$keywords){
         if(empty($nome) || empty($valor)){
             return "Nome e Preço são obrigatórios.";
         }
@@ -11,11 +11,12 @@
         }
 
         try{
-            $sql = "INSERT INTO produtos(nome,descricao,valor,estoque,imagem_url) VALUES
-                    (:nome, :descricao, :valor, :estoque, :imagem_url)";
+            $sql = "INSERT INTO produtos(nome,descricao,valor,estoque,imagem_url,keywords) VALUES
+                    (:nome, :descricao, :valor, :estoque, :imagem_url, :keywords)";
             $consulta = $conexao->prepare($sql);
             $consulta->bindValue(":nome",$nome);
             $consulta->bindValue(":descricao",$descricao);
+            $consulta->bindValue(":keywords",$keywords);
             $consulta->bindValue(":valor",$valor);
             $consulta->bindValue(":estoque",(int)$estoque, PDO::PARAM_INT);
             $consulta->bindValue(":imagem_url",$imagem);
@@ -87,7 +88,7 @@ function listarProdutos($conexao) {
     return $consulta->fetchAll();
 }
 
-function atualizarProduto($conexao, $id, $nome, $descricao, $valor, int $estoque, $imagem) {
+function atualizarProduto($conexao, $id, $nome, $descricao, $valor, int $estoque, $imagem, $keywords) {
     if (empty($id)) {
         return "ID do produto é obrigatório para atualização.";
     }
@@ -134,12 +135,13 @@ function atualizarProduto($conexao, $id, $nome, $descricao, $valor, int $estoque
 
         $sql = "UPDATE produtos 
                 SET nome = :nome, descricao = :descricao, valor = :valor, 
-                    estoque = :estoque, imagem_url = :imagem_url
+                    estoque = :estoque, imagem_url = :imagem_url, keywords = :keywords
                 WHERE id = :id";
         $consulta = $conexao->prepare($sql);
         $consulta->bindValue(":id", (int)$id, PDO::PARAM_INT);
         $consulta->bindValue(":nome", $nome);
         $consulta->bindValue(":descricao", $descricao);
+        $consulta->bindValue(":keywords", $keywords);
         $consulta->bindValue(":valor", $valor);
         $consulta->bindValue(":estoque", (int)$estoque, PDO::PARAM_INT);
         $consulta->bindValue(":imagem_url", $nomeFinalImagem);
