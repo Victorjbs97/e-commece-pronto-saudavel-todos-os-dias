@@ -26,6 +26,7 @@
 
     define('VIEWS_PATH', __DIR__ . '/../views');
 
+    $baseUrl = BASE_URL;
 
     $action = $_POST['action'] ?? null;
 
